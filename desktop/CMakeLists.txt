@@ -13,6 +13,8 @@ qt_add_executable(llmchat
     src/MainWindow.cpp
     src/Settings.h
     src/Settings.cpp
+    src/OpenRouterClient.h
+    src/OpenRouterClient.cpp
 )
 
 target_link_libraries(llmchat PRIVATE Qt6::Widgets Qt6::Network)
