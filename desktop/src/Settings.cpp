@@ -9,7 +9,7 @@ namespace {
 
 QString defaultModel()
 {
-    return QStringLiteral("deepseek/deepseek-flash-latest");
+    return QStringLiteral("~deepseek/deepseek-flash-latest");
 }
 
 QString configDir()

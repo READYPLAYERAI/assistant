@@ -29,7 +29,7 @@ The configuration file lives at `~/.config/llmchat/config.ini`. It uses the keys
 
 ## Model
 
-The model defaults to `deepseek/deepseek-flash-latest`. The model field accepts any OpenRouter model id.
+The model defaults to `~deepseek/deepseek-flash-latest`. OpenRouter requires the leading `~` for alias model ids; without it the API returns HTTP 400 "not a valid model ID". The model field accepts any OpenRouter model id.
 
 ## Usage
 

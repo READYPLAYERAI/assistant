@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_modelEdit = new QLineEdit(central);
     m_modelEdit->setObjectName(QStringLiteral("modelEdit"));
-    m_modelEdit->setText("deepseek/deepseek-flash-latest");
+    m_modelEdit->setText("~deepseek/deepseek-flash-latest");
     m_modelEdit->setPlaceholderText(tr("Model id"));
     m_modelEdit->setMinimumWidth(220);
 
