@@ -3,6 +3,7 @@
 #include <QMainWindow>
 
 class QCheckBox;
+class QCloseEvent;
 class QLineEdit;
 class QPlainTextEdit;
 class QPushButton;
@@ -11,6 +12,12 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
+private slots:
+    void saveSettings();
 
 private:
     QLineEdit *m_keyEdit = nullptr;

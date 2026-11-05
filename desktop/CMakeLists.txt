@@ -11,6 +11,8 @@ qt_add_executable(llmchat
     src/main.cpp
     src/MainWindow.h
     src/MainWindow.cpp
+    src/Settings.h
+    src/Settings.cpp
 )
 
 target_link_libraries(llmchat PRIVATE Qt6::Widgets Qt6::Network)

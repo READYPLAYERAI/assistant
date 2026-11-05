@@ -1,6 +1,9 @@
 #include "MainWindow.h"
 
+#include "Settings.h"
+
 #include <QCheckBox>
+#include <QCloseEvent>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
@@ -72,4 +75,26 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(central);
 
     statusBar()->showMessage(tr("Ready"));
+
+    m_keyEdit->setText(Settings::instance().apiKey());
+    m_modelEdit->setText(Settings::instance().model());
+    m_rememberCheck->setChecked(Settings::instance().rememberKey());
+
+    connect(m_modelEdit, &QLineEdit::editingFinished, this, &MainWindow::saveSettings);
+    connect(m_rememberCheck, &QCheckBox::toggled, this, &MainWindow::saveSettings);
+}
+
+void MainWindow::saveSettings()
+{
+    Settings &s = Settings::instance();
+    s.setModel(m_modelEdit->text().trimmed());
+    s.setRememberKey(m_rememberCheck->isChecked());
+    s.setApiKey(m_keyEdit->text().trimmed());
+    s.save();
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    saveSettings();
+    QMainWindow::closeEvent(event);
 }
