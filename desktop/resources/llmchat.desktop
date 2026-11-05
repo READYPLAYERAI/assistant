@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=LLM Chat
+GenericName=LLM Chat Client
+Comment=Chat with LLMs via OpenRouter
+Exec=llmchat
+Terminal=false
+Categories=Network;Chat;Qt;
+StartupWMClass=llmchat
+Icon=internet-chat

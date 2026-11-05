@@ -20,3 +20,4 @@ qt_add_executable(llmchat
 target_link_libraries(llmchat PRIVATE Qt6::Widgets Qt6::Network)
 
 install(TARGETS llmchat RUNTIME DESTINATION bin)
+install(FILES resources/llmchat.desktop DESTINATION share/applications)
